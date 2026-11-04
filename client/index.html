@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Black City RP — Demo</title>
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- KIRISH -->
+  <div id="login">
+    <div class="login-card glass">
+      <h1>BLACK<span>CITY</span> RP</h1>
+      <p class="sub">3D multiplayer roleplay · Demo</p>
+      <input id="nick" maxlength="14" placeholder="Nikneymingiz" autocomplete="off" />
+      <button id="play" class="btn big">O'YNASH</button>
+      <div class="keys">
+        <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> yurish / haydash</span>
+        <span><kbd>Shift</kbd> yugurish</span>
+        <span><kbd>F</kbd> mashina</span>
+        <span><kbd>E</kbd> ish · kazino</span>
+        <span><kbd>M</kbd> katta xarita</span>
+        <span><kbd>T</kbd> chat</span>
+        <span><kbd>V</kbd> mikrofon</span>
+        <span><kbd>Space</kbd> qo'l tormozi</span>
+        <span><kbd>B</kbd> bloom</span>
+        <span><kbd>R</kbd> yomg'ir</span>
+        <span><kbd>N</kbd> ovoz</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div id="toasts"></div>
+
+    <div id="stats" class="glass">
+      <div class="who"><span id="pname">Player</span><span id="lvl">LVL 1</span></div>
+      <div id="money">$0</div>
+      <div class="bar"><i id="xpbar"></i></div>
+      <div id="job">Ish: yo'q</div>
+    </div>
+
+    <canvas id="minimap" width="170" height="170"></canvas>
+
+    <div id="task" class="glass hidden">
+      <div class="t-top"><b id="taskText">Buyurtma</b><span class="pay" id="taskPay">$0</span></div>
+      <div class="t-mid"><span>📍 <b id="taskDist">0</b> m</span><span>⏱ bonus: <b id="taskPar">0</b> s</span></div>
+      <div class="bar"><i id="taskBar"></i></div>
+    </div>
+
+    <div id="speedo" class="glass dim">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#00e5ff" /><stop offset="1" stop-color="#ff2bd6" />
+          </linearGradient>
+        </defs>
+        <circle class="g-track" cx="100" cy="100" r="80" transform="rotate(135 100 100)" />
+        <circle id="gaugeVal" class="g-val" cx="100" cy="100" r="80" transform="rotate(135 100 100)" />
+      </svg>
+      <div class="s-center"><b id="kmh">0</b><span>km/h</span></div>
+      <div class="s-gear"><span id="gear">N</span></div>
+      <div class="rpm"><i id="rpm"></i></div>
+    </div>
+
+    <div id="mic">🎤 V — gapirish</div>
+    <div id="hint"></div>
+
+    <div id="chat">
+      <div id="log"></div>
+      <input id="chatInput" maxlength="120" placeholder="T — xabar yozish..." />
+    </div>
+  </div>
+
+  <!-- KATTA XARITA -->
+  <div id="bigmap" class="glass hidden">
+    <div class="bm-head"><b>🗺️ Shahar xaritasi</b><span>M — yopish</span></div>
+    <canvas id="bigmapCanvas" width="520" height="520"></canvas>
+    <div class="legend"><span><i class="d gold"></i>Ish · Kazino</span><span><i class="d yellow"></i>Buyurtma</span><span><i class="d green"></i>O'yinchilar</span></div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="hidden">
+    <div class="card glass">
+      <button id="close" aria-label="Yopish">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <div id="fx"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
